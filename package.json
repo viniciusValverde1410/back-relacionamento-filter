@@ -1,0 +1,32 @@
+{
+  "name": "animes-api",
+  "version": "1.0.0",
+  "description": "Projeto base de uma API com MVC",
+  "keywords": [
+    "nodejs",
+    "javascript",
+    "prisma"
+  ],
+  "license": "MIT",
+  "author": "Felipe Dev",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/server.js",
+    "prisma:seed": "node prisma/seed/seed.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed/seed.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.9",
+    "prisma": "^6.5.0"
+  }
+}
