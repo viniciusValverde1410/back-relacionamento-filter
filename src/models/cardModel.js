@@ -13,7 +13,7 @@
 
   class CardModel {
     // Obter todas as cartas
-    async findAll(raridade, ataque, pagina, limite) {
+    async findAll(raridade, ataque, pagina, limite, name) {
 
       if (Number(pagina) < 1) {
         pagina = 1;
@@ -33,6 +33,13 @@
       }
       if (ataque) {
         where.attackPoints = get(Number(ataque));
+      }
+
+      if (name) {
+        where.name = {
+          contains: name, // Não precisa ser o nome exato, pode ser parte do nome
+          // mode: "insensitive", // Ignora maiúsculas e minúsculas
+        };
       }
 
       const cartas = await prisma.card.findMany({ 
